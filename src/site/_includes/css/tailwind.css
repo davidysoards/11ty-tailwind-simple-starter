@@ -1,0 +1,25 @@
+/* purgecss start ignore */
+@tailwind base;
+/* purgecss end ignore */
+
+h1 {
+  @apply text-2xl;
+  @apply font-bold;
+}
+h2 {
+  @apply text-xl;
+  @apply font-bold;
+}
+h3 {
+  @apply text-lg;
+  @apply font-bold;
+}
+a {
+  @apply text-blue-700;
+}
+
+/* purgecss start ignore */
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
