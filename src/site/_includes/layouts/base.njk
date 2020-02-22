@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-  <title>{{ title }}</title>
+  <title>{{ pageTitle }}</title>
 </head>
   <body>
     {% include "components/_header.njk" %}
     <main class="bg-blue-200">
-      <div class="container p-4">
         {{ content | safe }}
-      </div>
     </main>
     {% include "components/_footer.njk" %}
     {% set js %}

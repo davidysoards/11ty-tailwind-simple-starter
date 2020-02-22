@@ -4,8 +4,16 @@ module.exports = function(eleventyConfig) {
   // Layout aliases
   eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
 
-  // Combine and minify JS files
-  eleventyConfig.addFilter('jsmin', require('./src/utils/minify-js.js'));
+  // Minify js files
+  eleventyConfig.addFilter('jsmin', code => {
+    const Terser = require('terser');
+    let minified = Terser.minify(code);
+    if (minified.error) {
+      console.log('Terser error: ', minified.error);
+      return code;
+    }
+    return minified.code;
+  });
 
   // Minify the HTML in prod
   if (process.env.NODE_ENV == 'production') {
@@ -16,7 +24,7 @@ module.exports = function(eleventyConfig) {
   }
 
   // Filters
-  eleventyConfig.addFilter('dateformat', dateObj => {
+  eleventyConfig.addFilter('formatDate', dateObj => {
     return DateTime.fromJSDate(dateObj, {
       zone: 'America/New_York',
     }).toFormat('LLLL d, y');
@@ -33,5 +41,7 @@ module.exports = function(eleventyConfig) {
       output: 'dist',
     },
     templateFormats: ['njk', 'md'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
   };
 };
