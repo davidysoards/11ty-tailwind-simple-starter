@@ -1,7 +1,7 @@
 {
   "name": "11ty-tailwind-starter",
   "license": "ISC",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "author": "David Soards",
   "scripts": {
@@ -15,16 +15,16 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@fullhuman/postcss-purgecss": "^2.0.6",
     "cssnano": "^4.1.10",
     "html-minifier": "^4.0.0",
-    "luxon": "^1.22.0",
+    "luxon": "^1.25.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.0",
-    "tailwindcss": "^1.2.0",
-    "terser": "^4.6.3"
+    "postcss-cli": "^7.1.2",
+    "postcss-nested": "^4.2.3",
+    "tailwindcss": "^1.8.10",
+    "terser": "^4.8.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.0"
+    "cross-env": "^7.0.2"
   }
 }
